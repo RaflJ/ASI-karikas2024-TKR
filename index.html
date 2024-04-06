@@ -4,10 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leaflet Tutorial</title>
-
-    <!-- leaflet css  -->
-   <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" /> -->
+    <title>Leaflet</title>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
@@ -58,59 +55,18 @@
     // Map initialization 
    var map = L.map('map').setView([59.394830866469796, 24.671355100774804], 16);
 
-   
 
-
-
-    /*==============================================
-                TILE LAYER and WMS
-    ================================================*/
-    //osm layer
     var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     });
     osm.addTo(map);
-    // map.addLayer(osm)
 
-    // water color 
-    var watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
-        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        subdomains: 'abcd',
-        minZoom: 1,
-        maxZoom: 16,
-        ext: 'jpg'
-    });
-    // watercolor.addTo(map)
 
-    // dark map 
-    var dark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: 'abcd',
-        maxZoom: 19
-    });
-    // dark.addTo(map)
 
-    // google street 
-    googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-        maxZoom: 20,
-        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-    });
-    // googleStreets.addTo(map);
+    ///CODE 
 
-    //google satellite
-    googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-        maxZoom: 20,
-        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-    });
-    // googleSat.addTo(map)
 
-    var wms = L.tileLayer.wms("http://localhost:8080/geoserver/wms", {
-        layers: 'geoapp:admin',
-        format: 'image/png',
-        transparent: true,
-        attribution: "wms test"
-    });
-
+    
     var marker = L.marker([59.394830866469796, 24.671355100774804]).addTo(map);
 
     L.Routing.control({
