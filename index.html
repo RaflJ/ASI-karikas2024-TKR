@@ -71,12 +71,9 @@
 
     ///CODE 
 
+    var marker = L.marker([59.39567481149717, 24.67076396943983]).addTo(map);
+    marker.bindPopup("Student House").openPopup();
 
-
-    var popup = L.popup()
-    .setLatLng([59.39567481149717, 24.67076396943983])
-    .setContent('Student House')
-    .openOn(map);
 
 
     L.Routing.control({
