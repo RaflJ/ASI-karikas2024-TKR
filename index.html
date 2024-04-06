@@ -7,7 +7,10 @@
     <title>Leaflet Tutorial</title>
 
     <!-- leaflet css  -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+   <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" /> -->
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
 
     <style>
         body {
@@ -44,10 +47,11 @@
 </html>
 
 <!-- leaflet js  -->
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
 <script src="./data/point.js"></script>
 <script src="./data/line.js"></script>
 <script src="./data/polygon.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
 
 
 <script>
@@ -108,6 +112,13 @@
     });
 
     var marker = L.marker([59.394830866469796, 24.671355100774804]).addTo(map);
+
+    L.Routing.control({
+        waypoints: [
+          L.latLng(59.394830866469796, 24.671355100774804),
+          L.latLng(59.395830866469796, 24.675355100774804)
+        ]
+      }).addTo(map);
 
    
 
