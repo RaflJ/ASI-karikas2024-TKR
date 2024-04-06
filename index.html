@@ -68,17 +68,68 @@
     osm.addTo(map);
 
 
+        var a1 = 59.39167481149717
+        var a2 = 24.67276396943983
 
     ///CODE 
-
-    var marker = L.marker([59.39567481149717, 24.67076396943983]).addTo(map);
+    var lat1 = 0;
+    var marker = L.marker([59.39567481149717, 24.67076396943983]).addTo(map).on('mouseover', onClick);;
     marker.bindPopup("Student House").openPopup();
+    function onClick(e) {
+      a1 = 59.39567481149717;
+      a2 = 24.67076396943983;
+    }
+
+    var marker1 = L.marker([59.39567481149717, 24.67076396943983]).addTo(map);
+    marker1.bindPopup("Student House").openPopup();
+
+
+    var marker2 = L.marker([59.39628666301598, 24.671289247419477]).addTo(map);
+    marker2.bindPopup("Faculty of civil engineering").openPopup();
+
+
+    var marker3 = L.marker([59.39683053302197, 24.664711469439883]).addTo(map);
+    marker3.bindPopup("Academic hostel").openPopup();
+
+
+    var marker4 = L.marker([59.39440989555308, 24.668677080313735]).addTo(map);
+    marker4.bindPopup("Study building").openPopup();
+
+
+    var marker5 = L.marker([59.39628666301598, 24.671289247419477]).addTo(map);
+    marker5.bindPopup("Faculty of mechanical engineering").openPopup();
+
+
+    var marker6 = L.marker([59.392382066504354, 24.678472896422605]).addTo(map);
+    marker6.bindPopup("Chair of Textile design").openPopup();
+
+
+    var marker7 = L.marker([59.39451374165436, 24.663361637859914]).addTo(map);
+    marker7.bindPopup("Tennis court").openPopup();
+
+
+    var marker8 = L.marker([59.39373533507592, 24.679084272627314]).addTo(map);
+    marker8.bindPopup("Sports centre").openPopup();
+
+
+    var marker9 = L.marker([59.39617266382807, 24.66385552525893]).addTo(map);
+    marker9.bindPopup("Student hoste").openPopup();
+
+
+    var marker10 = L.marker([59.397529044109454, 24.662288594050803]).addTo(map);
+    marker10.bindPopup("Building of natural science").openPopup();
+
+
+    var marker11 = L.marker([59.397548205867324, 24.6561831387505]).addTo(map);
+    marker11.bindPopup("Woodwork").openPopup();
+
+
 
 
 
     L.Routing.control({
         waypoints: [
-          L.latLng(59.394830866469796, 24.671355100774804),
+          L.latLng(a1, a2),
           L.latLng(59.395830866469796, 24.675355100774804)
         ],
         routeWhileDragging: true,
